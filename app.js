@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://olgalavida:sDrxoV4bDVXqf8vM@cluster0.eviw0.mongodb.net/').then(()=>console.log("database is connected")).catch(()=>console.error('Error'));
+MYKEY = process.env.MONGODB;
+mongoose.connect(`mongodb+srv://olgalavida:${MYKEY}.eviw0.mongodb.net/`).then(()=>console.log("database is connected")).catch(()=>console.error('Error'));
 
 const userSchema = new mongoose.Schema({
     name: String,
